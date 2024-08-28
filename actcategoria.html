@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Categoría</title>
+    <link rel="stylesheet" href="stilo.css">
+    <link rel="stylesheet" href="estilomenu.css">
+</head>
+<body>
+    
+      <!-- aqui inicia el menu -->
+   
+        <div class="menu-item">
+            <a href="">Categorías</a>
+            <div class="submenu">
+                <a href="aggcategoria.html">Agregar</a>
+                <a href="actcategoria.html">Actualizar</a>
+                <a href="elicategoria.html">Eliminar</a>
+            </div>
+        </div>
+       
+     <!-- aqui termina el menu -->
+     
+     <div class="container">
+        <h1>Buscar y Actualizar Categoría</h1>
+        
+        
+        <form action="buscar_categoria.php" method="POST">
+            <div class="form-group">
+                <label for="id_categoria">ID de la Categoría:</label>
+                <input type="text" id="id_categoria" name="id_categoria" placeholder="ID de la Categoría" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Buscar Categoría">
+            </div>
+        </form>
+
+       
+        <form action="actualizar_categoria.php" method="POST" style="display:none;" id="updateForm">
+            <div class="form-group">
+                <label for="nombre_categoria">Nombre de la Categoría:</label>
+                <input type="text" id="nombre_categoria" name="nombre_categoria" placeholder="Nombre de la Categoría" required>
+            </div>
+            <div class="form-group">
+                <input type="hidden" id="id_categoria_hidden" name="id_categoria">
+                <input type="submit" value="Actualizar Categoría">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // aqui va lo  para mostrar el formulario 
+        function showUpdateForm(id, nombre) {
+            var updateForm = document.getElementById('updateForm');
+            if (updateForm) {
+                updateForm.style.display = 'block';
+                document.getElementById('id_categoria_hidden').value = id;
+                document.getElementById('nombre_categoria').value = nombre;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Categoría</title>
+    <link rel="stylesheet" href="stilo.css">
+    <link rel="stylesheet" href="estilomenu.css">
+</head>
+<body>
+    <!-- aqui inicia el menu -->
+   
+    <div class="menu-item">
+        <a href="">Categorías</a>
+        <div class="submenu">
+            <a href="aggcategoria.html">Agregar</a>
+            <a href="actcategoria.html">Actualizar</a>
+            <a href="elicategoria.html">Eliminar</a>
+        </div>
+    </div>
+   
+ <!-- aqui termina el menu -->
+     </div>
+    <div class="container">
+        <h1>Registrar Categoría</h1>
+        <form action="procesar_categoria.php" method="POST">
+
+            <div class="form-group">
+                <label for="nombre_categoria">ID de la Categoría:</label> 
+                <input type="text" id="id_categoria" name="id_categoria" placeholder="ID de la Categoría" required>
+            </div>
+
+            <div class="form-group">
+                <label for="nombre_categoria">Nombre de la Categoría:</label>
+                <input type="text" id="nombre_categoria" name="nombre_categoria" placeholder="Nombre de la Categoría"required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Registrar Categoría">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

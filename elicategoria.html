@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Categoría</title>
+    <link rel="stylesheet" href="stilo.css">
+    <link rel="stylesheet" href="estilomenu.css">
+</head>
+<body>
+    <!-- aqui inicia el menu -->
+   
+    <div class="menu-item">
+        <a href="">Categorías</a>
+        <div class="submenu">
+            <a href="aggcategoria.html">Agregar</a>
+            <a href="actcategoria.html">Actualizar</a>
+            <a href="elicategoria.html">Eliminar</a>
+        </div>
+    </div>
+   
+ <!-- aqui  termina el menu -->
+     <div class="container">
+        <h1>Buscar y Eliminar Categoría</h1>
+        
+        
+        <form action="buscar_categoria1.php" method="POST">
+            <div class="form-group">
+                <label for="id_categoria">ID de la Categoría:</label>
+                <input type="text" id="id_categoria" name="id_categoria" placeholder="ID de la Categoría" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Buscar Categoría">
+            </div>
+        </form>
+
+        
+        <form action="eliminar_categoria.php" method="POST" style="display:none;" id="deleteForm">
+            <div class="form-group">
+                <p>¿Estás seguro de que deseas eliminar esta categoría?</p>
+                <input type="hidden" id="id_categoria_hidden" name="id_categoria">
+                <input type="submit" value="Eliminar Categoría">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        
+        function showDeleteForm(id) {
+            var deleteForm = document.getElementById('deleteForm');
+            if (deleteForm) {
+                deleteForm.style.display = 'block';
+                document.getElementById('id_categoria_hidden').value = id;
+            }
+        }
+    </script>
+</body>
+</html>
